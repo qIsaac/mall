@@ -135,7 +135,7 @@ public class UserServiceImpl implements IUserService {
     }
     @Override
     public ServerResponse<String> resetPassword(String passwordOld,String passwordNew,User user){
-        int resultCount = userMapper.checkPassword(passwordOld,user.getId());
+        int resultCount = userMapper.checkPassword(MD5Util.MD5EncodeUtf8(passwordOld),user.getId());
         if (resultCount == 0) {
             return ServerResponse.createByErrorMessage("旧密码错误");
         }
