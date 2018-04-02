@@ -18,4 +18,8 @@ public interface CartMapper {
     int updateByPrimaryKey(Cart record);
 
     List<Cart> selectCheckedCartByUserId(Integer userId);
+
+    List<Cart> selectCartByUserId(Integer userId);
+
+    int selectCartProductCheckedStatusByUserId(Integer userId);
 }
