@@ -116,6 +116,5 @@ public class JsonUtil {
         log.info(userListStr);
         List<User> userListObj1 = JsonUtil.str2obj(userListStr, new TypeReference<List<User>>() {});
         List<User> userListObj2 = JsonUtil.str2obj(userListStr,List.class,User.class);
-        System.out.println("end");
     }
 }
