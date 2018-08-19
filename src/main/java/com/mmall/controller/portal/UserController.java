@@ -54,7 +54,8 @@ public class UserController {
     /**
      * 注销
      *
-     * @param session
+     * @param
+     * @param
      * @return
      */
     @RequestMapping(value = "logout.do", method = RequestMethod.POST)
