@@ -25,7 +25,7 @@ public class SessionExpireFilter implements Filter{
     public void doFilter(ServletRequest servletRequest, ServletResponse servletResponse, FilterChain filterChain) throws IOException, ServletException {
         HttpServletRequest request = (HttpServletRequest) servletRequest;
         String loginToken = CookieUtil.readLoginCookie(request);
-        if (StringUtils.isEmpty(loginToken)){
+        if (StringUtils.isNotEmpty(loginToken)){
             String userJsonStr = RedisPoolUtil.get(loginToken);
             User user = JsonUtil.str2obj(userJsonStr,User.class);
             if (user != null) {
