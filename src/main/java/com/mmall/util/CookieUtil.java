@@ -49,6 +49,7 @@ public class CookieUtil {
                 log.info("read cookieName{},cookievalue{}", ck.getName(), ck.getValue());
                 if (StringUtils.equals(ck.getName(), COOKIE_NAME)) {
                     ck.setDomain(COOKIE_DOMAIN);
+                    ck.setPath("/");
                     ck.setMaxAge(0);
                     log.info("del cookieName{},cookievalue{}", ck.getName(), ck.getValue());
                     response.addCookie(ck);
